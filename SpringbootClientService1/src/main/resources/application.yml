@@ -1,0 +1,7 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: PARTS-ORDER-CLIENT-APP
+zepkin:
+    base-url: http://127.0.0.1:9411/

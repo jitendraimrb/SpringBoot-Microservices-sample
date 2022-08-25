@@ -1,0 +1,35 @@
+server:
+  port: 9191
+spring:
+  application:
+    name: API-GATEWAY
+  cloud:
+    gateway:
+      routes:
+        - id: PARTS-ORDER-CLIENT-APP
+          uri: lb://PARTS-ORDER-CLIENT-APP
+          predicates:
+            - Path=/parts/order/v1/**
+        - id: PARTS-ORDER-MANAGEMENT-APP
+          uri: lb://PARTS-ORDER-MANAGEMENT-APP
+          predicates:
+            - Path=/parts/management/v1/**
+            
+            
+            
+  #  cloud:
+#    gateway:
+#      routes:
+#        - id: YOUR-CLIENT2
+#          uri: lb://YOUR-CLIENT2
+#          predicates:
+#            - Path=/client2/**
+#          filters:
+#            - name: CircuitBreaker
+#              args:
+#                name: YOUR-CLIENT2
+#                fallbackuri: forward:/userServiceFallBack
+#        - id: YOUR-CLIENT1
+#          uri: lb://YOUR-CLIENT1
+#          predicates:
+#            - Path=/client1/**
