@@ -1,0 +1,1 @@
+This is sample POC for creating the microservices in SpringBoot where all the basic component are included like, API Gateway, Cloud-Config Server, Discovering Server, Central Log Monitoring and so on.
